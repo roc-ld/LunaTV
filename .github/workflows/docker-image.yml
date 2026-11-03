@@ -8,10 +8,22 @@ on:
         required: false
         default: 'latest'
         type: string
+
   push:
     branches: [ main, master ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'LICENSE'
+
   pull_request:
     branches: [ main, master ]
+    types: [ opened, synchronize, reopened ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'LICENSE'
+
   release:
     types: [ published ]
 
